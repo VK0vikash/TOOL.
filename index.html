@@ -752,55 +752,205 @@
                    </div>
                  </section>
                 <!-- Tool Card 4 -->
-                <div class="tool-card">
-                   <div class="tool-card-img">
+               <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --dark-color: #343a40;
+            --gray-color: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .tools-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-card-img {
+            background-color: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        .tool-card-img i {
+            font-size: 48px;
+        }
+        
+        .tool-card-content {
+            padding: 20px;
+        }
+        
+        .tool-card-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .tool-card-content p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .tool-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .tool-card-footer a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .tool-card-footer a:hover {
+            color: #3367d6;
+        }
+        
+        .tool-card-footer a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .rating {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rating i {
+            color: #fbbc05;
+            margin-right: 3px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tool-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tools-container">
+        <div class="tools-grid">
+            <!-- Tool Card 1 - PDF to Word -->
+            <div class="tool-card">
+                <div class="tool-card-img">
                     <i class="fas fa-file-word"></i>
-                     </div>
-                      <div class="tool-card-content">
-                       <h3>PDF to Word</h3>
-                         <p>Convert PDF files to editable Word documents while preserving formatting.</p>
-                           <div class="tool-card-footer">
-                            <a href="#">Use Tool <i class="fas fa-arrow-right"></i></a>
-                               <div class="rating">
-                                <i class="fas fa-star"></i> 4.6
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                
-                <!-- Tool Card 5 -->  
-                <div class="tool-card">
-                        <div class="tool-card-img">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <div class="tool-card-content">
-                        <h3>Image Converter</h3>
-                        <p>Convert between JPG, PNG, GIF, WebP and more formats with one click.</p>
-                        <div class="tool-card-footer">
-                            <a href="#">Use Tool <i class="fas fa-arrow-right"></i></a>
-                            <div class="rating">
-                                <i class="fas fa-star"></i> 4.7
-                            </div>
+                </div>
+                <div class="tool-card-content">
+                    <h3>PDF to Word</h3>
+                    <p>Convert PDF files to editable Word documents while preserving formatting.</p>
+                    <div class="tool-card-footer">
+                        <a href="/pdf-to-word">Use Tool <i class="fas fa-arrow-right"></i></a>
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 4.6
                         </div>
                     </div>
                 </div>
-   
-                <!-- Tool Card 6-->
-                <div class="tool-card">
-                     <div class="tool-card-img">
-                     <i class="fas fa-images"></i>
+            </div>
+            
+            <!-- Tool Card 2 - Image Converter -->
+            <div class="tool-card">
+                <div class="tool-card-img">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="tool-card-content">
+                    <h3>Image Converter</h3>
+                    <p>Convert between JPG, PNG, GIF, WebP and more formats with one click.</p>
+                    <div class="tool-card-footer">
+                        <a href="/image-converter">Use Tool <i class="fas fa-arrow-right"></i></a>
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 4.7
                         </div>
-                        <div class="tool-card-content">
-                           <h3>Image Watermark</h3>
-                           <p>Add text or image watermarks to protect your photos and images.</p>
-                           <div class="tool-card-footer">
-                       <a href="#">Use Tool <i class="fas fa-arrow-right"></i></a>
-                       <div class="rating">
-                    <i class="fas fa-star"></i> 4.4
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tool Card 3 - Image Watermark -->
+            <div class="tool-card">
+                <div class="tool-card-img">
+                    <i class="fas fa-images"></i>
+                </div>
+                <div class="tool-card-content">
+                    <h3>Image Watermark</h3>
+                    <p>Add text or image watermarks to protect your photos and images.</p>
+                    <div class="tool-card-footer">
+                        <a href="/image-watermark">Use Tool <i class="fas fa-arrow-right"></i></a>
+                        <div class="rating">
+                            <i class="fas fa-star"></i> 4.4
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-     </div>
+    </div>
+</body>
+</html>
     
     <!-- Features Section -->
     <section class="section features">
