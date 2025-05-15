@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online PDF tool to compress, optimize and convert documents with image optimization features">
+    <meta name="keywords" content="PDF tool, document compressor, image optimizer, PDF to Word, Word to PDF">
+    <meta name="author" content="PDF Word Tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PDF Word Tool - Compress & Optimize Documents">
+    <meta property="og:description" content="Free online tool to compress, optimize and convert PDF and Word documents">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/images/preview.jpg">
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <title>PDF Word Tool - Compress & Optimize Documents</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --light-text: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #3a56d4;
+            border-color: #3a56d4;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+            min-height: 90px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .compression-option {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .compression-option:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 107, 255, 0.05);
+        }
+        
+        .compression-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 107, 255, 0.1);
+        }
+        
+        .file-drop-area {
+            border: 2px dashed #ced4da;
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .file-drop-area.active {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 107, 255, 0.05);
+        }
+        
+        .progress {
+            height: 10px;
+            margin-top: 1rem;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .tool-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Optimize Your PDF & Word Documents</h1>
+            <p class="lead mb-4">Compress, convert and enhance your files with our free online tool</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#tool" class="btn btn-light btn-lg px-4">Start Now</a>
+              <a href="#features" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Top -->
+    <div class="container">
+        <div class="ad-container">
+            <!-- Replace with your Google AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
+                crossorigin="anonymous"></script>
+
+    <!-- Main Tool Section -->
+    <section id="tool" class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="tool-card">
+                    <h2 class="text-center mb-4"><i class="fas fa-file-upload me-2"></i>Upload Your Document</h2>
+                    
+                    <div id="fileDropArea" class="file-drop-area">
+                        <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: var(--primary-color);"></i>
+                        <p>Drag & drop your PDF or Word file here</p>
+                        <p class="text-muted">or</p>
+                        <button id="fileSelectBtn" class="btn btn-primary">Select File</button>
+                        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx" style="display: none;">
+                    </div>
+                    
+                    <div id="fileInfo" class="d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <h5 id="fileName" class="mb-0"></h5>
+                                <small id="fileSize" class="text-muted"></small>
+                            </div>
+                            <button id="removeFileBtn" class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <img id="imagePreview" class="preview-image" alt="Preview">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="mb-3">Compression Level</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="compression-option selected" data-level="low">
+                                    <h5>Low Compression</h5>
+                                    <p class="text-muted">Best quality, larger file size</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="compressionLevel" id="lowCompression" checked>
+                                        <label class="form-check-label" for="lowCompression">
+                                            Select
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="compression-option" data-level="medium">
+                                    <h5>Medium Compression</h5>
+                                    <p class="text-muted">Balanced quality and size</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="compressionLevel" id="mediumCompression">
+                                        <label class="form-check-label" for="mediumCompression">
+                                            Select
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="compression-option" data-level="high">
+                                    <h5>High Compression</h5>
+                                    <p class="text-muted">Smaller file size, reduced quality</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="compressionLevel" id="highCompression">
+                                        <label class="form-check-label" for="highCompression">
+                                            Select
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="mb-3">Image Optimization</h4>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="optimizeImages" checked>
+                            <label class="form-check-label" for="optimizeImages">Optimize images in document</label>
+                        </div>
+                        <div id="imageSettings" class="bg-light p-3 rounded">
+                            <div class="mb-3">
+                                <label for="imageQuality" class="form-label">Image Quality: <span id="qualityValue">80</span>%</label>
+                                <input type="range" class="form-range" id="imageQuality" min="10" max="100" value="80">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="convertToJpeg" checked>
+                                <label class="form-check-label" for="convertToJpeg">Convert PNG to JPEG (smaller files)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="mb-3">Output Format</h4>
+                        <select class="form-select" id="outputFormat">
+                            <option value="original">Keep original format</option>
+                            <option value="pdf">PDF</option>
+                            <option value="docx">Word (DOCX)</option>
+                            <option value="pptx">PowerPoint (PPTX)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button id="processBtn" class="btn btn-primary btn-lg" disabled>
+                            <i class="fas fa-cog me-2"></i>Process Document
+                        </button>
+                    </div>
+                    
+                    <div id="progressContainer" class="mt-3 d-none">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Processing...</span>
+                            <span id="progressPercent">0%</span>
+                        </div>
+                        <div class="progress">
+                            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="resultContainer" class="mt-4 text-center d-none">
+                        <div class="alert alert-success">
+                            <h4><i class="fas fa-check-circle me-2"></i>Document processed successfully!</h4>
+                            <p id="resultInfo" class="mb-2"></p>
+                        </div>
+                        <a id="downloadBtn" class="btn btn-success btn-lg" href="#" download>
+                            <i class="fas fa-download me-2"></i>Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Middle -->
+    <div class="container">
+        <div class="ad-container">
+            <!-- Replace with your Google AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
+                crossorigin="anonymous"></script>
+            <!-- Ad Unit 2 -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                data-ad-slot="YOUR_AD_UNIT_ID_2"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Powerful Features</h2>
+            <p class="lead text-muted">Everything you need to work with PDF and Word documents</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Format Conversion</h3>
+                    <p>Convert between PDF, Word, PowerPoint and Excel formats with just one click.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Processing</h3>
+                    <p>Your files are processed securely in your browser and never uploaded to our servers.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fast Processing</h3>
+                    <p>Optimized for speed - process your documents in seconds, not minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="container my-5 py-5 bg-light rounded-3">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">How It Works</h2>
+            <p class="lead text-muted">Process your documents in just 3 simple steps</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 1rem;">
+                        1
+                    </div>
+                    <h3>Upload Document</h3>
+                    <p>Drag and drop your PDF or Word file into the upload area or click to browse your files.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 1rem;">
+                        2
+                    </div>
+                    <h3>Choose Settings</h3>
+                    <p>Select your preferred compression level, image optimization settings and output format.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 1rem;">
+                        3
+                    </div>
+                    <h3>Download Result</h3>
+                    <p>Click the process button and download your optimized document in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+            <p class="lead text-muted">Find answers to common questions about our tool</p>
+        </div>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Is this tool really free to use?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, our PDF Word Tool is completely free to use. We support the service through advertisements, so you can enjoy all features without paying anything.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Are my documents secure?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely. All processing happens in your browser - we never upload your files to our servers. Your documents remain completely private and secure.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        What file formats are supported?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We support PDF, DOC, DOCX, PPT, PPTX, XLS, and XLSX files. You can convert between these formats or keep the original format with optimized content.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        Is there a file size limit?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        For optimal performance, we recommend files under 50MB. Very large files may take longer to process or could cause browser performance issues.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                        How does image optimization work?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our tool automatically detects images in your document and applies compression based on your quality settings. You can choose to convert PNGs to JPEGs for additional savings.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Bottom -->
+    <div class="container">
+        <div class="ad-container">
+            <!-- Replace with your Google AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
+                crossorigin="anonymous"></script>
+            <!-- Ad Unit 3 -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                data-ad-slot="YOUR_AD_UNIT_ID_3"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 mb-4 mb-md-0">
+                <div class="col-md-2 mb-4 mb-md-0">
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 PDF Word Tool. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Set PDF.js worker path
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
+        
+        // DOM Elements
+        const fileDropArea = document.getElementById('fileDropArea');
+        const fileSelectBtn = document.getElementById('fileSelectBtn');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const removeFileBtn = document.getElementById('removeFileBtn');
+        const imagePreview = document.getElementById('imagePreview');
+        const compressionOptions = document.querySelectorAll('.compression-option');
+        const processBtn = document.getElementById('processBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressPercent = document.getElementById('progressPercent');
+        const resultContainer = document.getElementById('resultContainer');
+        const resultInfo = document.getElementById('resultInfo');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const imageQuality = document.getElementById('imageQuality');
+        const qualityValue = document.getElementById('qualityValue');
+        const optimizeImages = document.getElementById('optimizeImages');
+        const imageSettings = document.getElementById('imageSettings');
+        
+        // Variables
+        let selectedFile = null;
+        let selectedCompression = 'low';
+        
+        // Event Listeners
+        fileSelectBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileSelect);
+        removeFileBtn.addEventListener('click', resetFileInput);
+        processBtn.addEventListener('click', processDocument);
+        imageQuality.addEventListener('input', updateQualityValue);
+        optimizeImages.addEventListener('change', toggleImageSettings);
+        
+        // Drag and drop events
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            fileDropArea.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileDropArea.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileDropArea.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            fileDropArea.classList.add('active');
+        }
+        
+        function unhighlight() {
+            fileDropArea.classList.remove('active');
+        }
+        
+        fileDropArea.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length) {
+                handleFiles(files);
+            }
+        }
+        
+        // Compression option selection
+        compressionOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                compressionOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedCompression = this.dataset.level;
+                document.querySelector(`#${this.querySelector('input').id}`).checked = true;
+            });
+        });
+        
+        // Functions
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            if (files.length) {
+                handleFiles(files);
+            }
+        }
+        
+        function handleFiles(files) {
+            const file = files[0];
+            const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 
+                               'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+                               'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+            
+            if (!validTypes.includes(file.type) && !file.name.match(/\.(pdf|doc|docx|ppt|pptx|xls|xlsx)$/i)) {
+                alert('Please select a valid PDF or Office document file.');
+                return;
+            }
+            
+            selectedFile = file;
+            displayFileInfo(file);
+            
+            // If it's an image file, show preview (for demo purposes)
+            if (file.type.match('image.*')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = 'none';
+            }
+        }
+        
+        function displayFileInfo(file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            fileInfo.classList.remove('d-none');
+            processBtn.disabled = false;
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        function resetFileInput() {
+            fileInput.value = '';
+            selectedFile = null;
+            fileInfo.classList.add('d-none');
+            processBtn.disabled = true;
+            resultContainer.classList.add('d-none');
+        }
+        
+        function updateQualityValue() {
+            qualityValue.textContent = imageQuality.value;
+        }
+        
+        function toggleImageSettings() {
+            imageSettings.style.display = optimizeImages.checked ? 'block' : 'none';
+        }
+        
+        function processDocument() {
+            if (!selectedFile) return;
+            
+            // Show progress
+            progressContainer.classList.remove('d-none');
+            resultContainer.classList.add('d-none');
+            
+            // Simulate processing (in a real app, this would be actual processing)
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = `${progress}%`;
+                progressPercent.textContent = `${Math.floor(progress)}%`;
+                
+                if (progress === 100) {
+                    clearInterval(interval);
+                    showResult();
+                }
+            }, 300);
+        }
+        
+        function showResult() {
+            // In a real app, this would be the actual processed file
+            const originalSize = selectedFile.size;
+            let compressedSize;
+            
+            switch(selectedCompression) {
+                case 'low':
+                    compressedSize = originalSize * 0.9; // 10% reduction
+                    break;
+                case 'medium':
+                    compressedSize = originalSize * 0.7; // 30% reduction
+                    break;
+                case 'high':
+                    compressedSize = originalSize * 0.5; // 50% reduction
+                    break;
+                default:
+                    compressedSize = originalSize * 0.8;
+            }
+            
+            // Apply additional reduction if image optimization is enabled
+            if (optimizeImages.checked) {
+                const qualityFactor = imageQuality.value / 100;
+                compressedSize *= qualityFactor;
+                
+                if (document.getElementById('convertToJpeg').checked) {
+                    compressedSize *= 0.7; // Additional 30% reduction for JPEG conversion
+                }
+            }
+            
+            // Ensure we don't go below 10% of original size
+            compressedSize = Math.max(compressedSize, originalSize * 0.1);
+            
+            resultInfo.textContent = `Original size: ${formatFileSize(originalSize)} → Compressed size: ${formatFileSize(compressedSize)} (${Math.round((1 - compressedSize/originalSize) * 100)}% reduction)`;
+            
+            // Create a dummy download link (in a real app, this would be the processed file)
+            const outputFormat = document.getElementById('outputFormat').value;
+            let extension = selectedFile.name.split('.').pop();
+            
+            if (outputFormat !== 'original') {
+                extension = outputFormat;
+            }
+            
+            downloadBtn.href = URL.createObjectURL(new Blob(['Processed file content would be here'], {type: 'application/octet-stream'}));
+            downloadBtn.download = `optimized_${selectedFile.name.split('.')[0]}.${extension}`;
+            
+            progressContainer.classList.add('d-none');
+            resultContainer.classList.remove('d-none');
+        }
+        
+        // Initialize
+        toggleImageSettings();
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Word Tool",
+      "url": "https://yourwebsite.com",
+      "description": "Free online tool to compress, optimize and convert PDF and Word documents with image optimization features",
+      "applicationCategory": "DocumentUtility",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "PDF Word Tools"
+      }
+    }
+    </script>
+</body>
+</html>
