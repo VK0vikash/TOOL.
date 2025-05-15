@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online PDF protector tool - secure your PDFs with passwords, compress files, and optimize images for smaller file sizes">
+    <meta name="keywords" content="PDF protector, PDF security, PDF compressor, PDF optimizer, protect PDF, password protect PDF">
+    <meta name="author" content="PDF Tools">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free Online PDF Protector Tool">
+    <meta property="og:description" content="Secure your PDFs with passwords and optimize file size with our free online tool">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/pdf-protector">
+    
+    <title>Free PDF Protector Tool | Secure & Compress PDFs Online</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com/pdf-protector">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Protector Tool",
+      "url": "https://yourwebsite.com/pdf-protector",
+      "description": "Free online tool to protect and optimize your PDF documents",
+      "applicationCategory": "DocumentUtility",
+      "operatingSystem": "All"
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 40px 0;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .ad-banner {
+            background-color: #f1f3f4;
+            padding: 15px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--gray-color);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(66, 133, 244, 0.05);
+        }
+        
+        .upload-area i {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area h2 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .upload-area p {
+            color: var(--gray-color);
+        }
+        
+        .options-section {
+            margin-bottom: 30px;
+        }
+        
+        .options-section h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .option-group {
+            margin-bottom: 20px;
+        }
+        
+        .option-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .option-group select, 
+        .option-group input[type="text"],
+        .option-group input[type="password"],
+        .option-group input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .option-group select:focus, 
+        .option-group input[type="text"]:focus,
+        .option-group input[type="password"]:focus,
+        .option-group input[type="number"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .slider-container {
+            margin-top: 15px;
+        }
+        
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .slider-labels span {
+            font-size: 14px;
+            color: var(--gray-color);
+        }
+        
+        .compression-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            outline: none;
+            border-radius: 4px;
+        }
+        
+        .compression-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .compression-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2d9249;
+        }
+        
+        .btn-danger {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #d33426;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .file-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+        
+        .file-info.active {
+            display: block;
+        }
+        
+        .file-info h4 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .file-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .file-detail {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .file-detail p:first-child {
+            font-weight: 500;
+            color: var(--gray-color);
+            margin-bottom: 5px;
+        }
+        
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .progress-container.active {
+            display: block;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .progress-text {
+            text-align: center;
+            color: var(--gray-color);
+            font-size: 14px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .feature-card i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .feature-card p {
+            color: var(--gray-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3c4043;
+            color: #9aa0a6;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                margin-top: 15px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+            }
+            
+            nav.active {
+                display: block;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">PDF<span>Protector</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tools">Tools</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Protect & Optimize Your PDF Documents</h1>
+                <p>Secure your PDF files with passwords, compress them for smaller sizes, and optimize images for better performance. All for free!</p>
+            </section>
+            
+            <section class="tool-container">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-file-pdf"></i>
+                    <h2>Upload Your PDF File</h2>
+                    <p>Drag & drop your PDF here or click to browse files</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                </div>
+                
+                <div class="file-info" id="fileInfo">
+                    <h4>File Details</h4>
+                    <div class="file-details">
+                        <div class="file-detail">
+                            <p>File Name</p>
+                            <p id="fileName">-</p>
+                        </div>
+                        <div class="file-detail">
+                            <p>File Size</p>
+                            <p id="fileSize">-</p>
+                        </div>
+                        <div class="file-detail">
+                            <p>Pages</p>
+                            <p id="pageCount">-</p>
+                        </div>
+                        <div class="file-detail">
+                            <p>Images</p>
+                            <p id="imageCount">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="options-section">
+                    <h3>Protection Options</h3>
+                    <div class="option-group">
+                        <label for="password">Set Password (optional)</label>
+                        <input type="password" id="password" placeholder="Enter password to protect PDF">
+                    </div>
+                    <div class="option-group">
+                        <label for="permissions">Permissions</label>
+                        <select id="permissions">
+                            <option value="all">Allow all permissions</option>
+                            <option value="none">Restrict all permissions</option>
+                            <option value="print">Allow printing only</option>
+                            <option value="copy">Allow content copying only</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="options-section">
+                    <h3>Compression & Optimization</h3>
+                    <div class="option-group">
+                        <label for="compressionLevel">Compression Level</label>
+                        <div class="slider-labels">
+                            <span>Low (Better Quality)</span>
+                            <span>Medium</span>
+                            <span>High (Smaller Size)</span>
+                        </div>
+                        <input type="range" min="1" max="3" value="2" class="compression-slider" id="compressionLevel">
+                    </div>
+                    <div class="option-group">
+                        <label for="imageQuality">Image Quality</label>
+                        <div class="slider-labels">
+                            <span>Low (30%)</span>
+                            <span>Medium (60%)</span>
+                            <span>High (90%)</span>
+                        </div>
+                        <input type="range" min="30" max="90" value="60" class="compression-slider" id="imageQuality">
+                        <p class="slider-value" id="imageQualityValue">60%</p>
+                    </div>
+                    <div class="option-group">
+                        <label for="dpi">Image Resolution (DPI)</label>
+                        <select id="dpi">
+                            <option value="72">72 DPI (Web)</option>
+                            <option value="150" selected>150 DPI (Standard)</option>
+                            <option value="300">300 DPI (Print)</option>
+                            <option value="custom">Custom DPI</option>
+                        </select>
+                        <input type="number" id="customDpi" placeholder="Enter custom DPI" style="display: none; margin-top: 10px;">
+                    </div>
+                </div>
+                
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar">
+                        <div class="progress" id="progressBar"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Processing your PDF...</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="optimizeBtn">Optimize PDF</button>
+                    <button class="btn" id="protectBtn">Protect PDF</button>
+                    <button class="btn btn-danger" id="resetBtn">Reset</button>
+                </div>
+            </section>
+            
+            <!-- Ad Banner Middle -->
+            <div class="ad-banner">
+                <!-- Replace with your Google AdSense ad unit -->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+                <!-- PDF Protector Middle Banner -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Protection</h3>
+                    <p>Add strong passwords to your PDF files to prevent unauthorized access and protect sensitive information.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-compress-alt"></i>
+                    <h3>Smart Compression</h3>
+                    <p>Reduce PDF file sizes without noticeable quality loss by optimizing images and removing unnecessary data.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast Processing</h3>
+                    <p>Our cloud-based processing ensures quick results without overloading your device's resources.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PDF Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // File upload handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const pageCount = document.getElementById('pageCount');
+        const imageCount = document.getElementById('imageCount');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const imageQualityValue = document.getElementById('imageQualityValue');
+        const dpiSelect = document.getElementById('dpi');
+        const customDpi = document.getElementById('customDpi');
+        
+        // Handle drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = 'var(--primary-color)';
+            uploadArea.style.backgroundColor = 'rgba(66, 133, 244, 0.1)';
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = 'var(--gray-color)';
+            uploadArea.style.backgroundColor = 'transparent';
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = 'var(--gray-color)';
+            uploadArea.style.backgroundColor = 'transparent';
+            
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileSelection();
+            }
+        });
+        
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', handleFileSelection);
+        
+        function handleFileSelection() {
+            const file = fileInput.files[0];
+            if (file && file.type === 'application/pdf') {
+                // Display file info
+                fileName.textContent = file.name;
+                fileSize.textContent = formatFileSize(file.size);
+                
+                // Simulate PDF analysis (in a real app, you'd use a PDF library)
+                setTimeout(() => {
+                    pageCount.textContent = Math.floor(Math.random() * 20) + 1;
+                    imageCount.textContent = Math.floor(Math.random() * 15);
+                    fileInfo.classList.add('active');
+                }, 500);
+            } else {
+                alert('Please select a valid PDF file.');
+                fileInput.value = '';
+            }
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // Image quality slider update
+        document.getElementById('imageQuality').addEventListener('input', function() {
+            imageQualityValue.textContent = this.value + '%';
+        });
+        
+        // Custom DPI handling
+        dpiSelect.addEventListener('change', function() {
+            customDpi.style.display = this.value === 'custom' ? 'block' : 'none';
+        });
+        
+        // Protect PDF button
+        document.getElementById('protectBtn').addEventListener('click', function() {
+            if (!fileInput.files.length) {
+                alert('Please select a PDF file first.');
+                return;
+            }
+            
+            processPDF('protect');
+        });
+        
+        // Optimize PDF button
+        document.getElementById('optimizeBtn').addEventListener('click', function() {
+            if (!fileInput.files.length) {
+                alert('Please select a PDF file first.');
+                return;
+            }
+            
+            processPDF('optimize');
+        });
+        
+        // Reset button
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            fileInput.value = '';
+            fileInfo.classList.remove('active');
+            document.getElementById('password').value = '';
+            document.getElementById('compressionLevel').value = 2;
+            document.getElementById('imageQuality').value = 60;
+            imageQualityValue.textContent = '60%';
+            dpiSelect.value = '150';
+            customDpi.style.display = 'none';
+            progressContainer.classList.remove('active');
+        });
+        
+        // Simulate PDF processing
+        function processPDF(action) {
+            progressContainer.classList.add('active');
+            progressBar.style.width = '0%';
+            progressText.textContent = action === 'protect' ? 'Protecting your PDF...' : 'Optimizing your PDF...';
+            
+            // Simulate processing with progress updates
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    progressBar.style.width = '100%';
+                    progressText.textContent = action === 'protect' 
+                        ? 'PDF protected successfully!' 
+                        : 'PDF optimized successfully!';
+                    
+                    // Simulate download after a delay
+                    setTimeout(() => {
+                        alert('Your processed PDF is ready for download!');
+                        progressContainer.classList.remove('active');
+                    }, 1000);
+                } else {
+                    progressBar.style.width = progress + '%';
+                }
+            }, 300);
+        }
+        
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }).catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
